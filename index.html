@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Message For You</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container login-container">
+        <h1>Messages for U</h1>
+        <p>Coba isi dengan tanggal pertama aku chat kamu:</p>
+        
+        <form onsubmit="checkCode(event)">
+            <input type="password" id="secretCode" placeholder="DDMMYYYY" autocomplete="off">
+            <button type="submit">Buka Pesan</button>
+        </form>
+        
+        <p id="errorMessage" class="error"></p>
+    </div>
+
+    <script>
+        function checkCode(event) {
+            // Mencegah form untuk refresh halaman
+            event.preventDefault(); 
+
+            // Kode rahasia yang kamu inginkan
+            const correctCode = "07052025"; 
+            const enteredCode = document.getElementById("secretCode").value;
+            const errorMessage = document.getElementById("errorMessage");
+
+            if (enteredCode === correctCode) {
+                // Jika benar, arahkan ke halaman transisi (nama file sudah diubah ke huruf kecil)
+                window.location.href = "transition.html"; 
+            } else {
+                // Jika salah, tampilkan pesan error
+                errorMessage.textContent = "Hayo looo salahhh, coba cek lagii 😉";
+                // Kosongkan input field agar pengguna bisa coba lagi
+                document.getElementById("secretCode").value = "";
+            }
+        }
+    </script>
+</body>
+</html>

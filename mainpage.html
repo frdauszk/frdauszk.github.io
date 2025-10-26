@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Kamu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container main-container">
+        <header>
+            
+            <h1>To The One Who Stole My Heart</h1>
+        </header>
+        
+        <nav>
+           
+            <button onclick="showContent('story')">1</button>
+            <button onclick="showContent('thingsILove')">2</button>
+            <button onclick="showContent('soundtrack')">3</button>
+        </nav>
+
+        <main id="content-area">
+            
+            <!-- ====== Konten 1: Ceritaku ====== -->
+            <!-- ID diubah agar sesuai dengan tombol -->
+            <div id="story" class="content show">
+                <h2>How I Started Loving You</h2>
+                
+                <!-- Teks dipecah jadi paragraf agar mudah dibaca -->
+                <p>
+                    Jadi, semuanya sebenernya berawal jauh dari hari pertama aku nge-chat kamu. Aku kan komdis Rasendra, entah kenapa dari 1000+ orang di sana, yang bener-bener aku notice itu kamu. Awalnya aku gatau kan namamu siapa, aku cuma mikir kayak, "Bjir bisa ya ada orang secakep ini," gitu doang. Terus ya udah, gaada intensi apa-apa.
+                </p>
+                <p>
+                    Trus TIBA-TIBA KAMU FOLLOW AKU, kaget dong. Nah, dari situ aku tau namamu. Aku langsung mikir, "Anjir, orangnya sama namanya sama-sama cakep," WKKWKWK. Dari situ juga aku tau kalo kamu anak aktu, terus adek kelasnya temenku juga (Uthman).
+                </p>
+                <p>
+                    Nah, darisitu aku mulai coba mengulik sedikit lah, dan di saat itu aku tau kalo ternyata kamu masih punya cowo. Jadi aku berhenti ngulik dan yaudah lanjutin hidup aja.
+                </p>
+                <p>
+                    Masuk ke semester 5 ini, pasti lebih sering ketemu lagi kan. Apalagi, tanpa disangka-sangka aku tiba-tiba disuruh chat Bethlin buat nawarin kamu jadi bendahara 2 Acase WKKWKWKKW. Tapi ya awalnya aku gaada intensi ke sana, pure cuma nawarin doang dan pengen ngajak anak 61 biar ada pengalaman & enak regenerasinya taun depan.
+                </p>
+                <p>
+                    Tapi kok... semakin lama kita interaksi, semakin lama aku liat kamu, hati aku ademmm banget. Kayak vibes-nya enak, becandanya masuk, trus kerja barengnya juga enak. MAKIN-MAKIN LAH INI PERASAANKU.
+                </p>
+                <p>
+                    APALAGI BARU-BARU INI AKU DAPET INFO KLO KAMU UDAH PUTUS. Jadi yaa gitu lah, aku rasa kalo aku ga ngambil kesempatan ini, aku bakal nyesel nantinya.
+                </s_>
+                <p>
+                    Intinya ya, <i>I fell for you the second I saw you</i>. Call it love at first sight, but that was only the beginning. Now, every single time we talk or meet, my feelings just accelerate. It feels like my love for you has no limits, only a constantly rising velocity.
+                </p>
+                <p>
+                    So, Qil, my intention is clear: I plan to invest more time in you and focus on getting to know the real you better than anyone. And here is my promise: <i>I will love you—a love that is constant, persistent, and will stand by you regardless of anything you do.</i>
+                </p>
+            </div>
+
+            <!-- ====== Konten 2: Yang Aku Suka ====== -->
+            <div id="thingsILove" class="content">
+                <h2>All The Little Things I Love About U</h2>
+                <ul>
+                    <!-- Teks diubah jadi Title Case, styling ALL CAPS via CSS -->
+                    <li>I Love Your Name</li>
+                    <li>I Love Your Style</li>
+                    <li>I Love Your Look</li>
+                    <li>I Love Your Smile</li>
+                    <li>I Love Your Eyes</li>
+                    <li>I Love Your Laugh</li>
+                    <li>I Love Your Voice</li>
+                    <li>I Love Your Facial Expressions</li>
+                    <li>I Love The Way You Dress Up</li>
+                    <li>I Love Your Choice of Accessories</li>
+                    <li>I Love Your Kindness</li>
+                    <li>I Love Your Patience</li>
+                    <li>I Love Your Sense of Humor</li>
+                    <li>I Love Your Confidence</li>
+                    <li>I Love Your Positive Outlook</li>
+                    <li>I Love The Way You Listen</li>
+                    <li>I Love Your Silly Jokes</li>
+                </ul>
+                <!-- Item terakhir dijadikan paragraf penutup -->
+                <p>
+                    And honestly, I WANT to spend the rest of our time together so I can find and love 50 more things about you.
+                </p>
+            </div>
+
+            <!-- ====== Konten 3: Soundtrack ====== -->
+            <div id="soundtrack" class="content">
+                <h2>The Soundtrack of My Obsession</h2>
+                
+                <p style="text-align: center; margin-bottom: 20px;">Beberapa lagu yang menggambarkan kamu.</p>
+                
+                <!-- INI ADALAH KODE EMBED SPOTIFY (GANTI DENGAN KODEMU) -->
+                <iframe style="border-radius:12px" 
+                src="https://open.spotify.com/embed/playlist/4JT8T8RtaAalIJA7qwo69M?utm_source=generator" 
+                width="100%" 
+                height="352" 
+                frameBorder="0" 
+                allowfullscreen="" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+
+                </iframe>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function showContent(contentId) {
+            // Sembunyikan semua konten dulu
+            const allContent = document.querySelectorAll('.content');
+            allContent.forEach(content => {
+                content.classList.remove('show');
+            });
+
+            // Tampilkan konten yang dipilih
+            const selectedContent = document.getElementById(contentId);
+            selectedContent.classList.add('show');
+        }
+    </script>
+</body>
+</html>
+

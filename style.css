@@ -1,0 +1,166 @@
+/* Import font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Pengaturan Dasar */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    color: #4B4453;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+}
+
+h1 {
+    color: #d63384;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #d63384;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.7;
+    font-size: 1.1em;
+    margin-bottom: 15px; /* Memberi jarak antar paragraf */
+}
+
+/* Style untuk Tombol */
+button, .button {
+    background-color: #d63384;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+button:hover, .button:hover {
+    background-color: #b0276a;
+    transform: translateY(-2px);
+}
+
+/* Style untuk Input */
+input[type="password"] {
+    width: 80%;
+    padding: 12px;
+    margin-top: 15px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 1em;
+}
+
+input[type="password"]:focus {
+    outline: none;
+    border-color: #d63384;
+}
+
+/* Pesan Error di Halaman Login */
+.error {
+    color: #c0392b;
+    margin-top: 15px;
+    font-weight: bold;
+    min-height: 1.2em; /* Memberi ruang agar layout tidak lompat */
+}
+
+/* =================================== */
+/* ==== TAMBAHAN BARU DIMULAI DI SINI ==== */
+/* =================================== */
+
+/* Style untuk Halaman Transisi */
+.transition-container h1 {
+    text-transform: uppercase; /* Membuat teks jadi kapital otomatis */
+    font-size: 1.8em; 
+}
+
+/* Halaman Utama */
+.main-container nav {
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 20px;
+}
+
+.main-container nav button {
+    margin: 0 10px;
+    background-color: transparent;
+    color: #d63384;
+    border: 2px solid #d63384;
+    /* Membuat tombol 1,2,3 jadi bulat */
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    border-radius: 50%;
+    font-weight: 600;
+}
+
+.main-container nav button:hover {
+    background-color: #d63384;
+    color: white;
+}
+
+.content {
+    display: none; /* Sembunyikan semua konten secara default */
+    text-align: left;
+    animation: fadeIn 0.5s;
+}
+
+.content.show {
+    display: block; /* Tampilkan konten yang aktif */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Style untuk list 'I Love...' */
+.main-container ul {
+    list-style-type: '♡ ';
+    padding-left: 30px; /* Sedikit lebih banyak ruang untuk icon hati */
+}
+
+.main-container ul li {
+    text-transform: uppercase; /* Membuat teks jadi kapital */
+    font-weight: 600; /* Sedikit lebih tebal */
+    margin-bottom: 10px; /* Memberi jarak antar list */
+    color: #4B4453;
+}
+
+/* Style untuk paragraf penutup di list */
+#thingsILove p {
+    font-style: italic;
+    font-weight: 600;
+    margin-top: 25px;
+    text-align: center;
+    color: #d63384;
+}
+
+/* Style untuk iFrame Spotify */
+#soundtrack iframe {
+    border: none; /* Menghilangkan border default jika ada */
+    margin-top: 20px;
+    border-radius: 12px; /* Menyamakan dengan style Spotify */
+}
+
