@@ -1,10 +1,15 @@
 /* Import font dari Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap');
 
 /* Pengaturan Dasar */
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    /* Ganti background gradasi ini dengan yang lebih menyala dan bersemangat */
+    background: linear-gradient(135deg, #ffccd5, #ff8fa3); /* Gradasi pink cerah ke medium pink */
+    /* Tambahan glow efek untuk semangat menyala */
+    background-size: 200% 200%; /* Agar gradasi bisa bergerak */
+    animation: gradientAnimation 15s ease infinite; /* Animasi gradasi */
+    
     color: #4B4453;
     display: flex;
     justify-content: center;
@@ -12,69 +17,125 @@ body {
     min-height: 100vh;
     margin: 0;
     text-align: center;
+    position: relative; 
+    /* Baris 'overflow: hidden;' sudah dihapus untuk memungkinkan scrolling */
 }
+
+/* Keyframes untuk animasi gradasi background */
+@keyframes gradientAnimation {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Layer overlay untuk menambahkan tekstur/pattern - Kita pakai yang lebih subtle atau ubah patternnya */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Mengganti pattern dengan yang lebih subtle atau bisa dihilangkan jika terlalu ramai */
+    /* Contoh pattern: https://www.toptal.com/designers/subtlepatterns/patterns/pink-rice.png (lebih halus) */
+    /* Atau pakai pattern dot kecil: https://www.toptal.com/designers/subtlepatterns/patterns/dot-grid.png */
+    background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/tiny-variations.png'); /* Pattern yang lebih umum tapi tetap soft */
+    background-repeat: repeat;
+    opacity: 0.3; /* Sedikit lebih terlihat */
+    pointer-events: none;
+    z-index: -1;
+    /* Tambahkan efek sparkle/bling-bling */
+    filter: brightness(1.1) contrast(1.1); /* Memberi sedikit sparkle */
+    animation: shimmer 10s infinite alternate; /* Animasi sparkle */
+}
+
+@keyframes shimmer {
+    from { opacity: 0.25; }
+    to { opacity: 0.35; }
+}
+
 
 .container {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.98); /* Lebih solid putihnya */
     padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 25px; 
+    /* Ubah box-shadow agar ada outer glow yang lebih jelas dan "menyala" */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), /* Shadow utama lebih dalam */
+                0 0 0 7px rgba(255, 182, 193, 0.6); /* Outer glow pink yang lebih cerah dan tebal */
     max-width: 600px;
     width: 90%;
+    position: relative; 
+    overflow: hidden; 
+    border: 1px solid rgba(255, 228, 230, 0.8); /* Tambah border tipis yang lembut */
 }
 
+/* --- Penyesuaian Font dan Warna agar lebih coquette --- */
 h1 {
-    color: #d63384;
-    margin-bottom: 20px;
+    font-family: 'Great Vibes', cursive; 
+    font-size: 3.8em; /* Ukuran lebih besar */
+    color: #c90a5f; /* Pink yang lebih tua dan elegan */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.15); /* Shadow lebih kuat */
+    margin-bottom: 25px;
+    line-height: 1.1; /* Agar tidak terlalu renggang */
 }
 
 h2 {
+    font-family: 'Dancing Script', cursive; /* H2 pakai Dancing Script biar lebih personal & coquette */
+    font-size: 2.2em;
     color: #d63384;
-    border-bottom: 2px solid #f0f0f0;
+    border-bottom: 2px solid #ffdde1; /* Warna border yang lembut */
     padding-bottom: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Sedikit shadow */
 }
 
 p {
-    line-height: 1.7;
-    font-size: 1.1em;
-    margin-bottom: 15px; /* Memberi jarak antar paragraf */
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.8; 
+    font-size: 1.05em; 
+    color: #5d4a66; 
+    margin-bottom: 18px; /* Lebih banyak jarak antar paragraf */
 }
 
 /* Style untuk Tombol */
 button, .button {
-    background-color: #d63384;
+    background-color: #ff69b4; /* Hot pink yang cerah */
     color: white;
     border: none;
-    padding: 12px 25px;
-    border-radius: 25px;
-    font-size: 1em;
+    padding: 14px 30px; /* Sedikit lebih besar */
+    border-radius: 30px; /* Lebih rounded lagi */
+    font-size: 1.05em;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; 
     text-decoration: none;
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 25px;
+    box-shadow: 0 6px 15px rgba(255, 105, 180, 0.3); /* Shadow yang lebih pink */
+    font-weight: 600;
 }
 
 button:hover, .button:hover {
-    background-color: #b0276a;
-    transform: translateY(-2px);
+    background-color: #e55c9f; /* Warna pink sedikit lebih gelap saat hover */
+    transform: translateY(-4px); /* Lebih menonjol saat hover */
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.4); 
 }
 
-/* Style untuk Input */
+/* --- Lain-lain --- */
 input[type="password"] {
     width: 80%;
     padding: 12px;
     margin-top: 15px;
-    border: 2px solid #ddd;
+    border: 2px solid #ffdde1; /* Border pink muda */
     border-radius: 25px;
     text-align: center;
     font-size: 1em;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); /* Inner shadow lembut */
 }
 
 input[type="password"]:focus {
     outline: none;
-    border-color: #d63384;
+    border-color: #ff8fa3; /* Border pink lebih cerah saat fokus */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05), 0 0 0 3px rgba(255, 105, 180, 0.2); /* Outer glow saat fokus */
 }
 
 /* Pesan Error di Halaman Login */
@@ -82,85 +143,127 @@ input[type="password"]:focus {
     color: #c0392b;
     margin-top: 15px;
     font-weight: bold;
-    min-height: 1.2em; /* Memberi ruang agar layout tidak lompat */
+    min-height: 1.2em; 
 }
-
-/* =================================== */
-/* ==== TAMBAHAN BARU DIMULAI DI SINI ==== */
-/* =================================== */
 
 /* Style untuk Halaman Transisi */
 .transition-container h1 {
-    text-transform: uppercase; /* Membuat teks jadi kapital otomatis */
-    font-size: 1.8em; 
+    /* GANTI FONT: Menggunakan 'Dancing Script' agar tidak terlalu formal/lebay */
+    font-family: 'Dancing Script', cursive;
+    font-size: 3em; /* Ukuran disesuaikan agar pas */
+    color: #c90a5f;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+    /* Hapus text-transform jika ada, biarkan natural */
+    text-transform: none; 
 }
 
 /* Halaman Utama */
 .main-container nav {
     margin-bottom: 30px;
-    border-bottom: 2px solid #eee;
+    border-bottom: 2px solid #ffdde1; /* Border lebih soft */
     padding-bottom: 20px;
 }
 
+/* Tombol navigasi 1,2,3 */
 .main-container nav button {
-    margin: 0 10px;
-    background-color: transparent;
-    color: #d63384;
-    border: 2px solid #d63384;
-    /* Membuat tombol 1,2,3 jadi bulat */
-    width: 45px;
-    height: 45px;
+    margin: 0 8px; 
+    background-color: #ffccd5; /* Background pink lebih muda */
+    color: #c90a5f; /* Teks pink yang lebih kuat */
+    border: 2px solid #ffdde1; 
+    width: 55px; /* Sedikit lebih besar */
+    height: 55px;
     padding: 0;
     border-radius: 50%;
-    font-weight: 600;
+    font-weight: 700; 
+    font-size: 1.2em; /* Teks angka lebih besar */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* Shadow lebih jelas */
 }
 
 .main-container nav button:hover {
-    background-color: #d63384;
+    background-color: #c90a5f; /* Background pink tua saat hover */
     color: white;
+    transform: translateY(-3px) scale(1.08); /* Lebih menonjol dan membesar */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
 }
 
 .content {
-    display: none; /* Sembunyikan semua konten secara default */
+    display: none; 
     text-align: left;
-    animation: fadeIn 0.5s;
+    animation: fadeIn 0.6s ease-out; /* Animasi fade-in lebih lama */
 }
 
 .content.show {
-    display: block; /* Tampilkan konten yang aktif */
+    display: block; 
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from { opacity: 0; transform: translateY(15px); } /* Fade in dari bawah */
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Style untuk list 'I Love...' */
 .main-container ul {
-    list-style-type: '♡ ';
-    padding-left: 30px; /* Sedikit lebih banyak ruang untuk icon hati */
+    list-style-type: none; 
+    padding-left: 0; 
+    text-align: left;
+    margin-top: 25px;
 }
 
 .main-container ul li {
-    text-transform: uppercase; /* Membuat teks jadi kapital */
-    font-weight: 600; /* Sedikit lebih tebal */
-    margin-bottom: 10px; /* Memberi jarak antar list */
-    color: #4B4453;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 14px; /* Jarak lebih lega */
+    color: #d63384; 
+    position: relative;
+    padding-left: 35px; /* Ruang lebih untuk ikon custom */
+    font-size: 1.08em; /* Sedikit lebih besar */
 }
+
+.main-container ul li::before {
+    content: '💖'; /* Ganti dengan emoji hati yang lebih spesifik */
+    position: absolute;
+    left: 0;
+    color: #ff69b4; 
+    font-size: 1.3em; /* Ukuran ikon lebih besar */
+    line-height: 1.4; 
+    transform: rotate(-10deg); /* Sedikit rotasi biar playful */
+}
+
+/* === INI ADALAH TAMBAHAN BARU UNTUK HIGHLIGHT === */
+#thingsILove ul li:first-child {
+    color: #c90a5f; /* Warna pink lebih kuat, sesuai H1 */
+    font-weight: 800; /* Ekstra tebal */
+    font-size: 1.15em; /* Sedikit lebih besar */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1); /* Shadow halus */
+}
+
+#thingsILove ul li:first-child::before {
+    content: '💖'; /* Ikon mahkota untuk "Putri" */
+    position: absolute;
+    transform: rotate(-10deg); /* Luruskan mahkotanya */
+    color: #ff69b4; 
+    font-size: 1.3em;
+    line-height: 1.3;
+}
+/* === AKHIR TAMBAHAN BARU === */
+
 
 /* Style untuk paragraf penutup di list */
 #thingsILove p {
     font-style: italic;
     font-weight: 600;
-    margin-top: 25px;
+    margin-top: 35px; /* Jarak lebih dari list */
     text-align: center;
-    color: #d63384;
+    color: #c90a5f; /* Pink yang lebih kuat */
+    font-size: 1.15em; /* Sedikit lebih besar */
 }
 
 /* Style untuk iFrame Spotify */
 #soundtrack iframe {
-    border: none; /* Menghilangkan border default jika ada */
-    margin-top: 20px;
-    border-radius: 12px; /* Menyamakan dengan style Spotify */
+    border: none; 
+    margin-top: 25px; /* Jarak lebih dari paragraf atas */
+    border-radius: 15px; /* Lebih rounded */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* Shadow untuk Spotify embed */
 }
 
